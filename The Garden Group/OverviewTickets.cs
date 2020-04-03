@@ -18,6 +18,7 @@ namespace The_Garden_Group
     {
         EditAddForm editForm;
         public Action<string> onDelete;
+        List<ViewIncident> incidents;
         public OverviewTickets()
         {
             InitializeComponent();
@@ -113,12 +114,34 @@ namespace The_Garden_Group
             bool email = IsValidEmail(searchbx.Text);
             bool ticketId = IsAlphanumeric(searchbx.Text);
             bool customerId = IsInt(searchbx.Text);
+
             if (searchbx.Text != "Email or Id")
             {
                 if (email || ticketId || customerId )
                 {
+                    Incident_Service incidentService = new Incident_Service();
+                     incidents = incidentService.listIncidents();
+                    List<ViewIncident> SearchResults = new List<ViewIncident>();
 
-                    MessageBox.Show("found");
+                    foreach (var row in incidents)
+                    {
+                            if (row.subjectEmail == searchbx.Text || row.id == searchbx.Text || row.employeeID.ToString() == searchbx.Text)
+                            {
+                                // add search results to list
+                               SearchResults.Add(row);
+                            }
+                        
+                    }
+                    // check if any results have been added to list
+                    if (SearchResults.Count > 0)
+                    {
+                        showTickets(SearchResults);
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ticket not found");
+                    }
 
                 }
                 else
@@ -133,6 +156,7 @@ namespace The_Garden_Group
         }
         private void OverviewTickets_Click(object sender, EventArgs e)
         {
+            showTickets(incidents);
             PlaceholderTxt();
         }
         private bool IsAlphanumeric(string str)
