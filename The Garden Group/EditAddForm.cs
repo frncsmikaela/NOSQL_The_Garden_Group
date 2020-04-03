@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ServiceDeskController;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,7 +18,10 @@ namespace The_Garden_Group
         private int subjectID;
         public Action<ViewIncident> onSave { get; set; }
         public Action<ViewIncident> onAdd { get; set; }
-        
+        private email mail;
+        private string status;
+
+
         public EditAddForm()
         {
             InitializeComponent();
@@ -43,6 +47,7 @@ namespace The_Garden_Group
             txtDescription.Text = i.problemDescription;
             txtBoxEmployeeID.Text = i.employeeID.ToString();
             comboBoxStatus.Text = i.status;
+            status = i.status;
             this.id = i.id;
             this.subjectID = i.subjectID;
             btnAddTicket.Enabled = false;
@@ -69,10 +74,18 @@ namespace The_Garden_Group
         }
 
         private void btnSaveChanges_Click(object sender, EventArgs e)
+
         {
             if (IsListCorrect())
             {
+                mail = new email();
                 onSave(GetItem());
+                
+                if(status != comboBoxStatus.Text)// check is status has been updated
+                {
+                    mail.ProblemResolved(txtBoxSubjectEmail.Text); // send email to infrom customer(problem solved)
+
+                }
                 this.Hide();
             }
             
@@ -82,7 +95,9 @@ namespace The_Garden_Group
         {
             if (IsListCorrect())
             {
+                mail = new email();
                 onAdd(GetItem());
+                mail.IncidentBooked(txtBoxSubjectEmail.Text); // send cofirmation email
                 this.Hide();
             }
         }
