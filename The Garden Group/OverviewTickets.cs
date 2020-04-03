@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static ServiceDeskController.Incident_Service;
 using ServiceDeskController;
+using System.Text.RegularExpressions;
 
 namespace The_Garden_Group
 {
@@ -91,6 +92,7 @@ namespace The_Garden_Group
 
             }
         }
+        // validate email address
         private bool IsValidEmail(string email)
         {
             try
@@ -108,21 +110,45 @@ namespace The_Garden_Group
         private void searchbtn_Click(object sender, EventArgs e)
         {
             bool email = IsValidEmail(searchbx.Text);
-            if (email && searchbx.Text != "")
+            bool ticketId = IsAlphanumeric(searchbx.Text);
+            bool customerId = IsInt(searchbx.Text);
+            if (searchbx.Text != "Email or Id")
             {
+                if (email || ticketId || customerId )
+                {
 
-                MessageBox.Show("found");
+                    MessageBox.Show("found");
 
+                }
+                else
+                {
+                    MessageBox.Show("Enter a valid email or Id");
+                }
             }
             else
             {
-                MessageBox.Show("Enter a valid email");
+                MessageBox.Show("Search box is empty");
             }
         }
-
         private void OverviewTickets_Click(object sender, EventArgs e)
         {
             PlaceholderTxt();
+        }
+        private bool IsAlphanumeric(string str)
+        {
+            if (Regex.IsMatch(str, "^[a-zA-Z0-9]*$"))
+            {
+                return true;
+            }
+            return false;
+        }
+        private bool IsInt(string str)
+        {
+            if (str.All(char.IsDigit))
+            {
+                return true;
+            }
+            return false;
         }
     }
 }
