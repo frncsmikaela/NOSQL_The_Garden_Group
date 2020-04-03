@@ -32,6 +32,7 @@
             this.btnGoBack = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.comboBoxStatus = new System.Windows.Forms.ComboBox();
+            this.dateTimePickerDateCreated = new System.Windows.Forms.DateTimePicker();
             this.btnAddTicket = new System.Windows.Forms.Button();
             this.btnSaveChanges = new System.Windows.Forms.Button();
             this.txtDescription = new System.Windows.Forms.TextBox();
@@ -42,7 +43,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtBoxEmployeeID = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.dateTimePickerDateDeadline = new System.Windows.Forms.DateTimePicker();
             this.pnlEditAddForm.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -71,8 +71,8 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dateTimePickerDateDeadline);
             this.groupBox1.Controls.Add(this.comboBoxStatus);
+            this.groupBox1.Controls.Add(this.dateTimePickerDateCreated);
             this.groupBox1.Controls.Add(this.btnAddTicket);
             this.groupBox1.Controls.Add(this.btnSaveChanges);
             this.groupBox1.Controls.Add(this.txtDescription);
@@ -94,12 +94,22 @@
             this.comboBoxStatus.FormattingEnabled = true;
             this.comboBoxStatus.Items.AddRange(new object[] {
             "Unresolved",
+            "PastDeadline",
             "Completed"});
             this.comboBoxStatus.Location = new System.Drawing.Point(136, 113);
             this.comboBoxStatus.Name = "comboBoxStatus";
             this.comboBoxStatus.Size = new System.Drawing.Size(200, 24);
             this.comboBoxStatus.TabIndex = 9;
             this.comboBoxStatus.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // dateTimePickerDateCreated
+            // 
+            this.dateTimePickerDateCreated.CustomFormat = "MMMM dd, yyyy-dddd";
+            this.dateTimePickerDateCreated.Location = new System.Drawing.Point(117, 166);
+            this.dateTimePickerDateCreated.Name = "dateTimePickerDateCreated";
+            this.dateTimePickerDateCreated.Size = new System.Drawing.Size(248, 22);
+            this.dateTimePickerDateCreated.TabIndex = 9;
+            this.dateTimePickerDateCreated.Value = new System.DateTime(2020, 3, 30, 15, 43, 15, 0);
             // 
             // btnAddTicket
             // 
@@ -145,9 +155,9 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(6, 171);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(98, 17);
+            this.label4.Size = new System.Drawing.Size(38, 17);
             this.label4.TabIndex = 4;
-            this.label4.Text = "Date Deadline";
+            this.label4.Text = "Date";
             // 
             // label3
             // 
@@ -190,15 +200,6 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Employee ID";
             // 
-            // dateTimePickerDateDeadline
-            // 
-            this.dateTimePickerDateDeadline.CustomFormat = "MMMM dd, yyyy-dddd";
-            this.dateTimePickerDateDeadline.Location = new System.Drawing.Point(117, 171);
-            this.dateTimePickerDateDeadline.Name = "dateTimePickerDateDeadline";
-            this.dateTimePickerDateDeadline.Size = new System.Drawing.Size(248, 22);
-            this.dateTimePickerDateDeadline.TabIndex = 10;
-            this.dateTimePickerDateDeadline.Value = new System.DateTime(2020, 3, 30, 15, 43, 15, 0);
-            // 
             // EditAddForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -230,7 +231,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtBoxEmployeeID;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DateTimePicker dateTimePickerDateCreated;
         private System.Windows.Forms.ComboBox comboBoxStatus;
-        private System.Windows.Forms.DateTimePicker dateTimePickerDateDeadline;
     }
 }

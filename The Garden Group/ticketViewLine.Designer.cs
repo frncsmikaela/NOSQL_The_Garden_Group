@@ -31,7 +31,7 @@
             this.lblID = new System.Windows.Forms.Label();
             this.lblSubjectEmail = new System.Windows.Forms.Label();
             this.lblEmployeeID = new System.Windows.Forms.Label();
-            this.lblDateDeadline = new System.Windows.Forms.Label();
+            this.lblDateCreated = new System.Windows.Forms.Label();
             this.lblStatus = new System.Windows.Forms.Label();
             this.pictureBoxDelete = new System.Windows.Forms.PictureBox();
             this.pictureBoxEdit = new System.Windows.Forms.PictureBox();
@@ -69,15 +69,15 @@
             this.lblEmployeeID.TabIndex = 2;
             this.lblEmployeeID.Text = "label1";
             // 
-            // lblDateDeadline
+            // lblDateCreated
             // 
-            this.lblDateDeadline.AutoSize = true;
-            this.lblDateDeadline.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDateDeadline.Location = new System.Drawing.Point(574, 25);
-            this.lblDateDeadline.Name = "lblDateDeadline";
-            this.lblDateDeadline.Size = new System.Drawing.Size(53, 20);
-            this.lblDateDeadline.TabIndex = 3;
-            this.lblDateDeadline.Text = "label1";
+            this.lblDateCreated.AutoSize = true;
+            this.lblDateCreated.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDateCreated.Location = new System.Drawing.Point(574, 25);
+            this.lblDateCreated.Name = "lblDateCreated";
+            this.lblDateCreated.Size = new System.Drawing.Size(53, 20);
+            this.lblDateCreated.TabIndex = 3;
+            this.lblDateCreated.Text = "label1";
             // 
             // lblStatus
             // 
@@ -120,7 +120,7 @@
             this.Controls.Add(this.pictureBoxDelete);
             this.Controls.Add(this.pictureBoxEdit);
             this.Controls.Add(this.lblStatus);
-            this.Controls.Add(this.lblDateDeadline);
+            this.Controls.Add(this.lblDateCreated);
             this.Controls.Add(this.lblEmployeeID);
             this.Controls.Add(this.lblSubjectEmail);
             this.Controls.Add(this.lblID);
@@ -138,7 +138,7 @@
         private System.Windows.Forms.Label lblID;
         private System.Windows.Forms.Label lblSubjectEmail;
         private System.Windows.Forms.Label lblEmployeeID;
-        private System.Windows.Forms.Label lblDateDeadline;
+        private System.Windows.Forms.Label lblDateCreated;
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.PictureBox pictureBoxEdit;
         private System.Windows.Forms.PictureBox pictureBoxDelete;

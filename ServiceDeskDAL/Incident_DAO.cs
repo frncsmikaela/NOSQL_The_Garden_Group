@@ -16,20 +16,10 @@ namespace ServiceDeskDAL
             this.collection = this.dbServDesk.GetCollection<Incident>("incidents");
         }
 
-        public int CountUnresolvedIncidents(String deadlineStatus)
+        public int countIncidents(String status)
         {
-            if (deadlineStatus == "PastDeadline")
-            {
-                // Return all unresolved tickets past deadline
-                var unresolvedIncidents = collection.Find(i => (i.status == "Unresolved") && (i.dateDeadline < DateTime.Now));
-                return (int)unresolvedIncidents.Count();
-            }
-            else
-            {
-                // Return all unresolved tickets before deadline
-                var unresolvedIncidents = collection.Find(i => (i.status == "Unresolved") && (i.dateDeadline >= DateTime.Now));
-                return (int)unresolvedIncidents.Count();
-            }
+            var unresolvedIncidents = collection.Find(i => i.status == status);
+            return (int)unresolvedIncidents.Count();
         }
 
         public int countAllIncidents()
@@ -38,23 +28,10 @@ namespace ServiceDeskDAL
             return (int)allIncidents.Count();
         }
 
-        // List all unresolved incidents.
-        // If the deadline status is "PastDeadline", return those that are past deadline
-        // Else return those that are still before the deadline
-        public IFindFluent<Incident, Incident> listIncidents(String deadlineStatus)
+        public IFindFluent<Incident, Incident> listIncidents(String status)
         {
-            if (deadlineStatus == "PastDeadline")
-            {
-                var incidents = collection.Find(i => (i.status == "Unresolved") && (i.dateDeadline < DateTime.Now));
-                return incidents;
-            }
-            else
-            {
-                var incidents = collection.Find(i => (i.status == "Unresolved") && (i.dateDeadline >= DateTime.Now));
-                return incidents;
-            }
-
-           
+            var incidents = collection.Find(i => i.status == status);
+            return incidents;
         }
         public IFindFluent<Incident, Incident> listAllIncidents()
         {
@@ -67,7 +44,7 @@ namespace ServiceDeskDAL
         {
             var filter = Builders<Incident>.Filter.Eq("_id", i._id);
             var newValue = Builders<Incident>.Update.Set("status", i.status).Set("subjectEmail", i.subjectEmail).Set("employeeID", i.employeeID)
-                .Set("_id", i._id).Set("subjectID", i.subjectID).Set("dateDeadline", i.dateDeadline).Set("problemDescription", i.problemDescription);
+                .Set("_id", i._id).Set("subjectID", i.subjectID).Set("dateCreated", i.dateCreated).Set("problemDescription", i.problemDescription);
             collection.UpdateOne(filter, newValue);
         }
 
@@ -80,7 +57,7 @@ namespace ServiceDeskDAL
                 {"problemDescription", i.problemDescription},
                 {"employeeID",i.employeeID},
                 {"status", i.status},
-                {"dateDeadline", i.dateDeadline}
+                {"dateCreated", i.dateCreated}
             };
 
             var myObj = BsonSerializer.Deserialize<Incident>(doc);
