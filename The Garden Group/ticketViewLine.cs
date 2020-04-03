@@ -27,7 +27,7 @@ namespace The_Garden_Group
             lblID.Text = i.id;
             lblSubjectEmail.Text = i.subjectEmail;
             lblEmployeeID.Text = i.employeeID.ToString();
-            lblDateCreated.Text = i.dateCreated.ToString();
+            lblDateDeadline.Text = i.dateDeadline.ToString();
             lblStatus.Text = i.status;
         }
 

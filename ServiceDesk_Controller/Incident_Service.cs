@@ -11,11 +11,11 @@ namespace ServiceDeskController
     {
         Incident_DAO dao = new Incident_DAO();
 
-        public int countIncidents(String status)
+        public int CountUnresolvedIncidents(String status)
         {
             try
             {
-                int countIncidents = dao.countIncidents(status);
+                int countIncidents = dao.CountUnresolvedIncidents(status);
                 return countIncidents;
             }
             catch (Exception)
@@ -63,6 +63,7 @@ namespace ServiceDeskController
                         subjectEmail = item.subjectEmail,
                         employeeID = item.employeeID,
                         dateCreated = item.dateCreated,
+                        dateDeadline = item.dateDeadline,
                         status = item.status,
                         problemDescription = item.problemDescription
                         
@@ -88,6 +89,7 @@ namespace ServiceDeskController
                 subjectID = i.subjectID,
                 employeeID = i.employeeID,
                 dateCreated = i.dateCreated,
+                dateDeadline = i.dateDeadline,
                 status = i.status,
                 problemDescription = i.problemDescription,
                 subjectEmail = i.subjectEmail
@@ -101,6 +103,7 @@ namespace ServiceDeskController
             {
                 employeeID = i.employeeID,
                 dateCreated = i.dateCreated,
+                dateDeadline = i.dateDeadline,
                 status = i.status,
                 problemDescription = i.problemDescription,
                 subjectEmail = i.subjectEmail
@@ -122,6 +125,7 @@ namespace ServiceDeskController
             public int subjectID { get; set; }
             public string subjectEmail { get; set; }
             public DateTime dateCreated { get; set; }
+            public DateTime dateDeadline { get; set; }
             public string status { get; set; }
             public string problemDescription { get; set; }
         }
