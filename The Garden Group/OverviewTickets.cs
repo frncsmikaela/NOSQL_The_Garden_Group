@@ -65,6 +65,64 @@ namespace The_Garden_Group
                 onDelete(item.id);
                 
             }
+
+        }
+        private void PlaceholderTxt()
+        {
+            searchbx.Text = "Email or Id";
+            searchbx.ForeColor = Color.Gray;
+        }
+
+        private void searchbx_Click(object sender, EventArgs e)
+        {
+            if (searchbx.Text == "Email or Id")
+            {
+                searchbx.Text = "";
+                searchbx.ForeColor = Color.Black;
+
+            }
+        }
+
+        private void searchbx_Leave(object sender, EventArgs e)
+        {
+            if (searchbx.Text == "")
+            {
+                PlaceholderTxt();
+
+            }
+        }
+        private bool IsValidEmail(string email)
+        {
+            try
+            {
+                email = email.Trim();
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        private void searchbtn_Click(object sender, EventArgs e)
+        {
+            bool email = IsValidEmail(searchbx.Text);
+            if (email && searchbx.Text != "")
+            {
+
+                MessageBox.Show("found");
+
+            }
+            else
+            {
+                MessageBox.Show("Enter a valid email");
+            }
+        }
+
+        private void OverviewTickets_Click(object sender, EventArgs e)
+        {
+            PlaceholderTxt();
         }
     }
 }
