@@ -10,6 +10,7 @@ namespace ServiceDeskModel
         public int subjectID { get; set; }
         public string subjectEmail { get; set; }
         public DateTime dateCreated { get; set; }
+        public DateTime dateDeadline { get; set; }
         public string status { get; set; }
         public string problemDescription { get; set; }
 

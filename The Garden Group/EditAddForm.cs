@@ -21,6 +21,7 @@ namespace The_Garden_Group
         public EditAddForm()
         {
             InitializeComponent();
+            FormClosing += (s, e) => { this.Hide(); e.Cancel = true; };
         }
 
         internal void EditNewItem()
@@ -31,7 +32,6 @@ namespace The_Garden_Group
             txtDescription.Text = "";
             txtBoxEmployeeID.Text = "";
             comboBoxStatus.Text = "Unresolved";
-            dateTimePickerDateCreated.Value = DateTime.Now;
             btnSaveChanges.Enabled = false;
             Show();
         }
@@ -39,7 +39,7 @@ namespace The_Garden_Group
         public void EditExistingItem(ViewIncident i )
         {
             txtBoxSubjectEmail.Text = i.subjectEmail;
-            dateTimePickerDateCreated.Value = i.dateCreated;
+            dateTimePickerDateDeadline.Value = i.dateDeadline;
             txtDescription.Text = i.problemDescription;
             txtBoxEmployeeID.Text = i.employeeID.ToString();
             comboBoxStatus.Text = i.status;
@@ -56,7 +56,7 @@ namespace The_Garden_Group
             newValue.subjectEmail = txtBoxSubjectEmail.Text;
             newValue.status = comboBoxStatus.Text;
             newValue.problemDescription = txtDescription.Text;
-            newValue.dateCreated = dateTimePickerDateCreated.Value;
+            newValue.dateDeadline = dateTimePickerDateDeadline.Value;
             newValue.employeeID = int.Parse(txtBoxEmployeeID.Text);
             newValue.id = id;
             newValue.subjectID = subjectID;

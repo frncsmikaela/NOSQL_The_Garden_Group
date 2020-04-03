@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static ServiceDeskController.Incident_Service;
 using ServiceDeskController;
-using System.Text.RegularExpressions;
 
 namespace The_Garden_Group
 {
@@ -66,89 +65,16 @@ namespace The_Garden_Group
                 onDelete(item.id);
                 
             }
-
-        }
-        private void PlaceholderTxt()
-        {
-            searchbx.Text = "Email or Id";
-            searchbx.ForeColor = Color.Gray;
         }
 
-        private void searchbx_Click(object sender, EventArgs e)
+        private void CheckDateDeadline(TicketViewLine vl)
         {
-            if (searchbx.Text == "Email or Id")
-            {
-                searchbx.Text = "";
-                searchbx.ForeColor = Color.Black;
+            var item = vl.GetItem();
 
-            }
-        }
-
-        private void searchbx_Leave(object sender, EventArgs e)
-        {
-            if (searchbx.Text == "")
+            if (item.dateDeadline > DateTime.Now)
             {
-                PlaceholderTxt();
-
+                item.status = "PastDeadline";
             }
-        }
-        // validate email address
-        private bool IsValidEmail(string email)
-        {
-            try
-            {
-                email = email.Trim();
-                var addr = new System.Net.Mail.MailAddress(email);
-                return addr.Address == email;
-            }
-            catch
-            {
-                return false;
-            }
-        }
-
-        private void searchbtn_Click(object sender, EventArgs e)
-        {
-            bool email = IsValidEmail(searchbx.Text);
-            bool ticketId = IsAlphanumeric(searchbx.Text);
-            bool customerId = IsInt(searchbx.Text);
-            if (searchbx.Text != "Email or Id")
-            {
-                if (email || ticketId || customerId )
-                {
-
-                    MessageBox.Show("found");
-
-                }
-                else
-                {
-                    MessageBox.Show("Enter a valid email or Id");
-                }
-            }
-            else
-            {
-                MessageBox.Show("Search box is empty");
-            }
-        }
-        private void OverviewTickets_Click(object sender, EventArgs e)
-        {
-            PlaceholderTxt();
-        }
-        private bool IsAlphanumeric(string str)
-        {
-            if (Regex.IsMatch(str, "^[a-zA-Z0-9]*$"))
-            {
-                return true;
-            }
-            return false;
-        }
-        private bool IsInt(string str)
-        {
-            if (str.All(char.IsDigit))
-            {
-                return true;
-            }
-            return false;
         }
     }
 }

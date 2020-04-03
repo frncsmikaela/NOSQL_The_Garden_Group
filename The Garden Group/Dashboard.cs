@@ -37,10 +37,10 @@ namespace The_Garden_Group
         // Updates the complete UI of the Dashboard and all forms
         private void UpdateDashboardUI()
         {
-            int unresolvedIncidents = incidentService.countIncidents("Unresolved");
-            int pastDeadlineIncidents = incidentService.countIncidents("PastDeadline");
+            int beforeDeadline = incidentService.CountUnresolvedIncidents("BeforeDeadline");
+            int pastDeadlineIncidents = incidentService.CountUnresolvedIncidents("PastDeadline");
             int allIncidents = incidentService.countAllIncidents();
-            lblUnresolvedTickets.Text = unresolvedIncidents.ToString();
+            lblUnresolvedTickets.Text = beforeDeadline.ToString();
             lblPastDeadline.Text = pastDeadlineIncidents.ToString();
             lblAllTickets.Text = allIncidents.ToString();
         }
@@ -58,7 +58,7 @@ namespace The_Garden_Group
 
         private void pnlUnresolvedTickets_MouseClick(object sender, MouseEventArgs e)
         {
-            filter = "Unresolved";
+            filter = "BeforeDeadline";
             UpdateIncidents();
             overviewForm.Show();
         }
