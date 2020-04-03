@@ -28,7 +28,7 @@ namespace The_Garden_Group
             // TODO clear all fields and enable/disable button
 
             txtBoxSubjectEmail.Text = "";
-            txtDescription.Text = "hello";
+            txtDescription.Text = "";
             txtBoxEmployeeID.Text = "";
             comboBoxStatus.Text = "Unresolved";
             dateTimePickerDateCreated.Value = DateTime.Now;
