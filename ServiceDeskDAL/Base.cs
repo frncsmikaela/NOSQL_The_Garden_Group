@@ -5,13 +5,28 @@ namespace ServiceDeskDAL
 {
     public class Base
     {
-        protected IMongoDatabase dbServDesk;
-        public Base()
+        private static MongoClient instance = null;
+
+        private Base() { }
+        public static MongoClient GetInstance()
         {
-            MongoClient dbClient = new MongoClient("mongodb+srv://admin:admin@cluster0-6vgii.mongodb.net/test?retryWrites=true&w=majority");
-            this.dbServDesk = dbClient.GetDatabase("servicedesk");
+
+            if (instance == null)
+            {
+                try
+                {
+                    instance = new MongoClient("mongodb+srv://admin:admin@cluster0-6vgii.mongodb.net/test?retryWrites=true&w=majority");
+                }
+                catch (Exception e)
+                {
+                    
+                }
+
+            }
+            return instance;
         }
-      
     }
+
 }
+
 

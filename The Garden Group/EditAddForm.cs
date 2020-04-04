@@ -81,7 +81,7 @@ namespace The_Garden_Group
                 mail = new email();
                 onSave(GetItem());
                 
-                if(status != comboBoxStatus.Text)// check is status has been updated
+                if(status == "Unresolved" && comboBoxStatus.Text == "Completed" )
                 {
                     mail.ProblemResolved(txtBoxSubjectEmail.Text); // send email to infrom customer(problem solved)
 

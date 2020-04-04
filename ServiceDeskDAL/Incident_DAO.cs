@@ -8,12 +8,14 @@ using MongoDB.Bson.Serialization;
 
 namespace ServiceDeskDAL
 {
-    public class Incident_DAO : Base
+    public class Incident_DAO
     {
         IMongoCollection<Incident> collection;
         public Incident_DAO()
         {
-            this.collection = this.dbServDesk.GetCollection<Incident>("incidents");
+            MongoClient conn = Base.GetInstance();
+            IMongoDatabase dbServDesk = conn.GetDatabase("servicedesk");
+             collection = dbServDesk.GetCollection<Incident>("incidents");
         }
 
         public int CountUnresolvedIncidents(String deadlineStatus)
