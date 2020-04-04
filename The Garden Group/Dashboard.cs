@@ -58,15 +58,19 @@ namespace The_Garden_Group
 
         private void pnlUnresolvedTickets_MouseClick(object sender, MouseEventArgs e)
         {
+            overviewForm.heading = "Unresolved Tickets";
             filter = "BeforeDeadline";
             UpdateIncidents();
+            this.Hide();
             overviewForm.Show();
         }
 
         private void pnlPastDeadlinesTickets_MouseClick(object sender, MouseEventArgs e)
         {
+            overviewForm.heading = "Tickets Past Deadline";
             filter = "PastDeadline";
             UpdateIncidents();
+            this.Hide();
             overviewForm.Show();
         }
 
@@ -89,8 +93,10 @@ namespace The_Garden_Group
 
         private void pnlAllTickets_MouseClick(object sender, MouseEventArgs e)
         {
+            overviewForm.heading = "All Tickets";
             filter = null;
             UpdateIncidents();
+            this.Hide();
             overviewForm.Show();
         }
 

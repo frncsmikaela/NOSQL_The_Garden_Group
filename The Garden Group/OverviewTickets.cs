@@ -19,6 +19,12 @@ namespace The_Garden_Group
         EditAddForm editForm;
         public Action<string> onDelete;
         List<ViewIncident> incidents;
+        public string heading; // show type of ticket
+        Incident_Service incidentService = new Incident_Service();
+        string filter;
+
+
+        
         public OverviewTickets()
         {
             InitializeComponent();
@@ -35,6 +41,7 @@ namespace The_Garden_Group
         // Each view line is added to the list
         public void showTickets(List<ViewIncident> incidents)
         {
+            headinglbl.Text = heading;
             // flowlayoutpanel clear
             flowLayoutPanelShowTickets.Controls.Clear();
 
@@ -119,11 +126,10 @@ namespace The_Garden_Group
             {
                 if (email || ticketId || customerId )
                 {
-                    Incident_Service incidentService = new Incident_Service();
-                     incidents = incidentService.listIncidents();
+                    incidents = incidentService.listIncidents();
                     List<ViewIncident> SearchResults = new List<ViewIncident>();
 
-                    foreach (var row in incidents)
+                    foreach (ViewIncident row in incidents)
                     {
                             if (row.subjectEmail == searchbx.Text || row.id == searchbx.Text || row.employeeID.ToString() == searchbx.Text)
                             {
@@ -156,9 +162,32 @@ namespace The_Garden_Group
         }
         private void OverviewTickets_Click(object sender, EventArgs e)
         {
-            showTickets(incidents);
-            PlaceholderTxt();
+
+            if (searchbx.Text != "Email or Id" && searchbx.Text != "")
+            {
+                PlaceholderTxt();
+                if (headinglbl.Text == "Tickets Past Deadline")
+                {
+                    filter = "PastDeadline";
+                    incidents = incidentService.listIncidents(filter);
+                }
+                else if(headinglbl.Text == "Unresolved Tickets")
+                {
+                    filter = "BeforeDeadline";
+                    incidents = incidentService.listIncidents(filter);
+
+                }
+                else
+                {
+                    incidents = incidentService.listIncidents();
+                }
+                
+                showTickets(incidents);
+            }
+           
+            
         }
+        //check if search text is alphanumeric
         private bool IsAlphanumeric(string str)
         {
             if (Regex.IsMatch(str, "^[a-zA-Z0-9]*$"))
@@ -167,6 +196,7 @@ namespace The_Garden_Group
             }
             return false;
         }
+        // check if search text is an int
         private bool IsInt(string str)
         {
             if (str.All(char.IsDigit))
@@ -175,6 +205,15 @@ namespace The_Garden_Group
             }
             return false;
         }
+
+        private void dashboardbtn_Click(object sender, EventArgs e)
+        {
+           Dashboard dashboard = new Dashboard();
+            dashboard.Show();
+            this.Hide();
+        }
+
+       
     }
 }
 
