@@ -36,6 +36,7 @@ namespace The_Garden_Group
             txtDescription.Text = "";
             txtBoxEmployeeID.Text = "";
             comboBoxStatus.Text = "Unresolved";
+            dateTimePickerDateDeadline.Value = DateTime.Now;
             btnSaveChanges.Enabled = false;
             btnAddTicket.Enabled = true;
             Show();

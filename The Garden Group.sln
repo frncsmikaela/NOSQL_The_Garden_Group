@@ -4,12 +4,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceDeskUI", "The Garden Group\ServiceDeskUI.csproj", "{C86653B0-529B-4E37-B9AE-EFD54431D56E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{9A346407-13EA-48E0-8300-2EA1E950E50F} = {9A346407-13EA-48E0-8300-2EA1E950E50F}
+		{A4AC10BC-7E86-466A-94B0-86E3FE5344A6} = {A4AC10BC-7E86-466A-94B0-86E3FE5344A6}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceDeskDAL", "ServiceDeskDAL\ServiceDeskDAL.csproj", "{9A346407-13EA-48E0-8300-2EA1E950E50F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceDeskModel", "ServiceDeskModel\ServiceDeskModel.csproj", "{A4AC10BC-7E86-466A-94B0-86E3FE5344A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceDeskController", "ServiceDesk_Controller\ServiceDeskController.csproj", "{9DA478AF-3588-4981-B4AC-883DE6325D26}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceDeskController", "ServiceDesk_Controller\ServiceDeskController.csproj", "{9DA478AF-3588-4981-B4AC-883DE6325D26}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

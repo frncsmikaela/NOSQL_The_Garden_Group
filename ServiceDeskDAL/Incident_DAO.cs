@@ -10,7 +10,7 @@ namespace ServiceDeskDAL
 {
     public class Incident_DAO : Base
     {
-        IMongoCollection<Incident> collection;
+        private IMongoCollection<Incident> collection;
         public Incident_DAO()
         {
             this.collection = this.dbServDesk.GetCollection<Incident>("incidents");

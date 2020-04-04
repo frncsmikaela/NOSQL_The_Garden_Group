@@ -9,7 +9,7 @@ namespace ServiceDeskController
 {
     public class Incident_Service
     {
-        Incident_DAO dao = new Incident_DAO();
+        private Incident_DAO dao = new Incident_DAO();
 
         public int CountUnresolvedIncidents(String status)
         {

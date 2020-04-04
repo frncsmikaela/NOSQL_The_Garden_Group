@@ -13,10 +13,10 @@ namespace The_Garden_Group
 {
     public partial class Dashboard : Form
     {
-        Incident_Service incidentService = new Incident_Service();
-        OverviewTickets overviewForm = new OverviewTickets();
-        EditAddForm editForm = new EditAddForm();
-        string filter = null;
+        private Incident_Service incidentService = new Incident_Service();
+        private OverviewTickets overviewForm = new OverviewTickets();
+        private EditAddForm editForm = new EditAddForm();
+        private string filter = null;
 
         public Dashboard()
         {
