@@ -37,6 +37,7 @@ namespace The_Garden_Group
             txtBoxEmployeeID.Text = "";
             comboBoxStatus.Text = "Unresolved";
             btnSaveChanges.Enabled = false;
+            btnAddTicket.Enabled = true;
             Show();
         }
 
