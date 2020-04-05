@@ -58,9 +58,9 @@
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.pnlUnresolvedTickets);
             this.panel1.Location = new System.Drawing.Point(23, 126);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.panel1.Padding = new System.Windows.Forms.Padding(3);
             this.panel1.Size = new System.Drawing.Size(244, 242);
             this.panel1.TabIndex = 3;
             // 
@@ -73,7 +73,7 @@
             this.pnlUnresolvedTickets.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pnlUnresolvedTickets.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlUnresolvedTickets.Location = new System.Drawing.Point(3, 3);
-            this.pnlUnresolvedTickets.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlUnresolvedTickets.Margin = new System.Windows.Forms.Padding(2);
             this.pnlUnresolvedTickets.Name = "pnlUnresolvedTickets";
             this.pnlUnresolvedTickets.Size = new System.Drawing.Size(236, 234);
             this.pnlUnresolvedTickets.TabIndex = 1;
@@ -119,9 +119,9 @@
             this.panel3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.panel3.Controls.Add(this.pnlPastDeadlinesTickets);
             this.panel3.Location = new System.Drawing.Point(396, 126);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
-            this.panel3.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.panel3.Padding = new System.Windows.Forms.Padding(3);
             this.panel3.Size = new System.Drawing.Size(245, 241);
             this.panel3.TabIndex = 4;
             // 
@@ -134,10 +134,11 @@
             this.pnlPastDeadlinesTickets.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pnlPastDeadlinesTickets.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlPastDeadlinesTickets.Location = new System.Drawing.Point(3, 3);
-            this.pnlPastDeadlinesTickets.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlPastDeadlinesTickets.Margin = new System.Windows.Forms.Padding(2);
             this.pnlPastDeadlinesTickets.Name = "pnlPastDeadlinesTickets";
             this.pnlPastDeadlinesTickets.Size = new System.Drawing.Size(239, 235);
             this.pnlPastDeadlinesTickets.TabIndex = 0;
+            this.pnlPastDeadlinesTickets.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlPastDeadlinesTickets_Paint);
             this.pnlPastDeadlinesTickets.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pnlPastDeadlinesTickets_MouseClick);
             // 
             // lblPastDeadline
@@ -179,9 +180,9 @@
             this.panel5.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel5.Controls.Add(this.pnlAllTickets);
             this.panel5.Location = new System.Drawing.Point(170, 394);
-            this.panel5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
-            this.panel5.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.panel5.Padding = new System.Windows.Forms.Padding(3);
             this.panel5.Size = new System.Drawing.Size(239, 233);
             this.panel5.TabIndex = 5;
             // 
@@ -194,7 +195,7 @@
             this.pnlAllTickets.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pnlAllTickets.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlAllTickets.Location = new System.Drawing.Point(3, 3);
-            this.pnlAllTickets.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlAllTickets.Margin = new System.Windows.Forms.Padding(2);
             this.pnlAllTickets.Name = "pnlAllTickets";
             this.pnlAllTickets.Size = new System.Drawing.Size(233, 227);
             this.pnlAllTickets.TabIndex = 0;
@@ -241,7 +242,7 @@
             // 
             this.btnCreateTicket.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCreateTicket.Location = new System.Drawing.Point(555, 65);
-            this.btnCreateTicket.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCreateTicket.Margin = new System.Windows.Forms.Padding(2);
             this.btnCreateTicket.Name = "btnCreateTicket";
             this.btnCreateTicket.Size = new System.Drawing.Size(108, 46);
             this.btnCreateTicket.TabIndex = 6;
@@ -258,7 +259,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel5);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Dashboard";
             this.Text = "Dashboard";
             this.panel1.ResumeLayout(false);

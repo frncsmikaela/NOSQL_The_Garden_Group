@@ -38,8 +38,8 @@
     <Reference Include="Crc32C.NET, Version=1.0.5.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Crc32C.NET.1.0.5.0\lib\net20\Crc32C.NET.dll</HintPath>
     </Reference>
-    <Reference Include="DnsClient, Version=1.2.0.0, Culture=neutral, PublicKeyToken=4574bb5573c51424, processorArchitecture=MSIL">
-      <HintPath>..\packages\DnsClient.1.2.0\lib\net471\DnsClient.dll</HintPath>
+    <Reference Include="DnsClient, Version=1.3.1.0, Culture=neutral, PublicKeyToken=4574bb5573c51424, processorArchitecture=MSIL">
+      <HintPath>..\packages\DnsClient.1.3.1\lib\net471\DnsClient.dll</HintPath>
     </Reference>
     <Reference Include="MongoDB.Bson, Version=2.10.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MongoDB.Bson.2.10.2\lib\net452\MongoDB.Bson.dll</HintPath>
@@ -53,21 +53,34 @@
     <Reference Include="MongoDB.Libmongocrypt, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MongoDB.Libmongocrypt.1.0.0\lib\net452\MongoDB.Libmongocrypt.dll</HintPath>
     </Reference>
-    <Reference Include="SharpCompress, Version=0.23.0.0, Culture=neutral, PublicKeyToken=afb0a02973931d96, processorArchitecture=MSIL">
-      <HintPath>..\packages\SharpCompress.0.23.0\lib\net45\SharpCompress.dll</HintPath>
+    <Reference Include="SharpCompress, Version=0.25.0.0, Culture=neutral, PublicKeyToken=afb0a02973931d96, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpCompress.0.25.0\lib\net46\SharpCompress.dll</HintPath>
     </Reference>
     <Reference Include="Snappy.NET, Version=1.1.1.8, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Snappy.NET.1.1.1.8\lib\net45\Snappy.NET.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.Buffers, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Buffers.4.4.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
     </Reference>
     <Reference Include="System.Core" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.7.1\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
       <Private>True</Private>
       <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Text.Encoding.CodePages, Version=4.1.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encoding.CodePages.4.7.0\lib\net461\System.Text.Encoding.CodePages.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -92,11 +105,23 @@
     <Compile Include="EditAddForm.Designer.cs">
       <DependentUpon>EditAddForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditAddUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditAddUser.Designer.cs">
+      <DependentUpon>EditAddUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="OverviewTickets.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="OverviewTickets.Designer.cs">
       <DependentUpon>OverviewTickets.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OverviewUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OverviewUsers.Designer.cs">
+      <DependentUpon>OverviewUsers.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -106,14 +131,26 @@
     <Compile Include="TicketViewLine.Designer.cs">
       <DependentUpon>TicketViewLine.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserLine.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserLine.Designer.cs">
+      <DependentUpon>UserLine.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditAddForm.resx">
       <DependentUpon>EditAddForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EditAddUser.resx">
+      <DependentUpon>EditAddUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="OverviewTickets.resx">
       <DependentUpon>OverviewTickets.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OverviewUsers.resx">
+      <DependentUpon>OverviewUsers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -127,6 +164,9 @@
     </Compile>
     <EmbeddedResource Include="TicketViewLine.resx">
       <DependentUpon>TicketViewLine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserLine.resx">
+      <DependentUpon>UserLine.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -143,6 +183,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ServiceDeskModel\ServiceDeskModel.csproj">
+      <Project>{a4ac10bc-7e86-466a-94b0-86e3fe5344a6}</Project>
+      <Name>ServiceDeskModel</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ServiceDesk_Controller\ServiceDeskController.csproj">
       <Project>{9da478af-3588-4981-b4ac-883de6325d26}</Project>
       <Name>ServiceDeskController</Name>

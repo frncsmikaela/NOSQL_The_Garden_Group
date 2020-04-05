@@ -24,26 +24,26 @@ namespace ServiceDeskDAL
             {
                 // Return all unresolved tickets past deadline
                 var unresolvedIncidents = collection.Find(i => (i.status == "Unresolved") && (i.dateDeadline < DateTime.Now));
-                return (int)unresolvedIncidents.Count();
+                return (int)unresolvedIncidents.CountDocuments();
             }
             else
             {
                 // Return all unresolved tickets before deadline
                 var unresolvedIncidents = collection.Find(i => (i.status == "Unresolved") && (i.dateDeadline >= DateTime.Now));
-                return (int)unresolvedIncidents.Count();
+                return (int)unresolvedIncidents.CountDocuments();
             }
         }
 
-        public int countAllIncidents()
+        public int CountAllIncidents()
         {
             var allIncidents = collection.Find(i => true);
-            return (int)allIncidents.Count();
+            return (int)allIncidents.CountDocuments();
         }
 
         // List all unresolved incidents.
         // If the deadline status is "PastDeadline", return those that are past deadline
         // Else return those that are still before the deadline
-        public IFindFluent<Incident, Incident> listIncidents(String deadlineStatus)
+        public IFindFluent<Incident, Incident> ListIncidents(String deadlineStatus)
         {
             if (deadlineStatus == "PastDeadline")
             {
@@ -58,7 +58,7 @@ namespace ServiceDeskDAL
 
            
         }
-        public IFindFluent<Incident, Incident> listAllIncidents()
+        public IFindFluent<Incident, Incident> ListAllIncidents()
         {
             var allIncidents = collection.Find(i => true);
             return allIncidents;
@@ -75,6 +75,7 @@ namespace ServiceDeskDAL
 
         public void InsertTicket(Incident i)
         {
+
             var doc = new BsonDocument
             {
                 {"subjectEmail", i.subjectEmail},

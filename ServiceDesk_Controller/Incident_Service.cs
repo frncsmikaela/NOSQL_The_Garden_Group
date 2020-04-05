@@ -30,7 +30,7 @@ namespace ServiceDeskController
         {
             try
             {
-                int countAllIncidents = dao.countAllIncidents();
+                int countAllIncidents = dao.CountAllIncidents();
                 return countAllIncidents;
             }
             catch (Exception)
@@ -47,11 +47,11 @@ namespace ServiceDeskController
                 IFindFluent<Incident, Incident> incidents;
                 if (status == null)
                 {
-                    incidents = dao.listAllIncidents();
+                    incidents = dao.ListAllIncidents();
                 }
                 else
                 {
-                    incidents = dao.listIncidents(status);
+                    incidents = dao.ListIncidents(status);
                 }
                 var res = new List<ViewIncident>();
                 foreach (var item in incidents.ToList())
@@ -106,8 +106,10 @@ namespace ServiceDeskController
                 dateDeadline = i.dateDeadline,
                 status = i.status,
                 problemDescription = i.problemDescription,
-                subjectEmail = i.subjectEmail
-            };
+                subjectEmail = i.subjectEmail,
+                // For now, subject ID is just 3
+                subjectID = 3
+        };
             dao.InsertTicket(inc);
         }
 

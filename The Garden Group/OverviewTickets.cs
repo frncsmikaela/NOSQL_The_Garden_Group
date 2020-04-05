@@ -37,7 +37,7 @@ namespace The_Garden_Group
         }
 
         // Copies all elements in the given list to the ticket view
-        // A view line for every is created
+        // A view line for every element is created
         // Each view line is added to the list
         public void showTickets(List<ViewIncident> incidents)
         {
