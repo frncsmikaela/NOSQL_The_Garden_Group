@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows.Forms;
 using MongoDB.Driver;
 
 namespace ServiceDeskDAL
@@ -19,7 +20,7 @@ namespace ServiceDeskDAL
                 }
                 catch (Exception e)
                 {
-                    
+                    MessageBox.Show("failed to connect to database" + e.ToString());
                 }
 
             }

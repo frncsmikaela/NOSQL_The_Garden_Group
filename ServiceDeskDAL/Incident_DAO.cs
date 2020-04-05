@@ -88,6 +88,7 @@ namespace ServiceDeskDAL
             var myObj = BsonSerializer.Deserialize<Incident>(doc);
 
             collection.InsertOne(myObj);
+            
         }
 
         public void DeleteTicket(ObjectId id)
