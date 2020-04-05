@@ -31,8 +31,6 @@ namespace The_Garden_Group
             txtPhone.Text = u.phone.ToString();
             comboLocation.SelectedItem = u.location;
             comboType.SelectedItem = u.type;
-            lblPassword.Hide();
-            checkBox1.Hide();
             Show();
         }
 
@@ -44,8 +42,6 @@ namespace The_Garden_Group
             txtPhone.Text = "";
             comboLocation.SelectedItem = "Haarlem";
             comboType.SelectedItem = "employee";
-            lblPassword.Show();
-            checkBox1.Show();
             Show();
         }
 
@@ -85,6 +81,8 @@ namespace The_Garden_Group
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
+            OverviewUsers overviewUsers = new OverviewUsers();
+            overviewUsers.Show();
             this.Hide();
         }
     }

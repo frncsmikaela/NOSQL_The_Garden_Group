@@ -16,7 +16,7 @@ namespace The_Garden_Group
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new OverviewUsers());
+            Application.Run(new Dashboard());
         }
     }
 }
