@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblTickets = new System.Windows.Forms.Label();
             this.lblLastName = new System.Windows.Forms.Label();
             this.lblFirstName = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
@@ -38,17 +37,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDelete)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEdit)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lblTickets
-            // 
-            this.lblTickets.AutoSize = true;
-            this.lblTickets.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTickets.Location = new System.Drawing.Point(616, 17);
-            this.lblTickets.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblTickets.Name = "lblTickets";
-            this.lblTickets.Size = new System.Drawing.Size(46, 17);
-            this.lblTickets.TabIndex = 13;
-            this.lblTickets.Text = "label1";
             // 
             // lblLastName
             // 
@@ -126,7 +114,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pictureBoxDelete);
             this.Controls.Add(this.pictureBoxEdit);
-            this.Controls.Add(this.lblTickets);
             this.Controls.Add(this.lblLastName);
             this.Controls.Add(this.lblFirstName);
             this.Controls.Add(this.lblEmail);
@@ -144,7 +131,6 @@
 
         private System.Windows.Forms.PictureBox pictureBoxDelete;
         private System.Windows.Forms.PictureBox pictureBoxEdit;
-        private System.Windows.Forms.Label lblTickets;
         private System.Windows.Forms.Label lblLastName;
         private System.Windows.Forms.Label lblFirstName;
         private System.Windows.Forms.Label lblEmail;

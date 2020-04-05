@@ -29,7 +29,6 @@ namespace The_Garden_Group
             lblEmail.Text = u.email;
             lblFirstName.Text = u.firstName;
             lblLastName.Text = u.lastName;
-            lblTickets.Text = "1";
         }
 
         public User GetItem()

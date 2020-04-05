@@ -30,7 +30,6 @@
         {
             this.searchbtn = new System.Windows.Forms.Button();
             this.searchbox = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -61,17 +60,6 @@
             this.searchbox.Size = new System.Drawing.Size(170, 21);
             this.searchbox.TabIndex = 15;
             this.searchbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(619, 97);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(77, 20);
-            this.label5.TabIndex = 14;
-            this.label5.Text = "# tickets";
             // 
             // label4
             // 
@@ -169,7 +157,6 @@
             this.Controls.Add(this.btnCreateUser);
             this.Controls.Add(this.searchbtn);
             this.Controls.Add(this.searchbox);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -186,7 +173,6 @@
 
         private System.Windows.Forms.Button searchbtn;
         private System.Windows.Forms.TextBox searchbox;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
