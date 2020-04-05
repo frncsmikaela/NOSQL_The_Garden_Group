@@ -34,7 +34,7 @@ namespace ServiceDeskDAL
             }
         }
 
-        public int countAllIncidents()
+        public int CountAllIncidents()
         {
             var allIncidents = collection.Find(i => true);
             return (int)allIncidents.Count();
@@ -43,7 +43,7 @@ namespace ServiceDeskDAL
         // List all unresolved incidents.
         // If the deadline status is "PastDeadline", return those that are past deadline
         // Else return those that are still before the deadline
-        public IFindFluent<Incident, Incident> listIncidents(String deadlineStatus)
+        public IFindFluent<Incident, Incident> ListIncidents(String deadlineStatus)
         {
             if (deadlineStatus == "PastDeadline")
             {
@@ -58,7 +58,7 @@ namespace ServiceDeskDAL
 
            
         }
-        public IFindFluent<Incident, Incident> listAllIncidents()
+        public IFindFluent<Incident, Incident> ListAllIncidents()
         {
             var allIncidents = collection.Find(i => true);
             return allIncidents;
