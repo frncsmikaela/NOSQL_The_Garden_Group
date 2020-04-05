@@ -106,8 +106,10 @@ namespace ServiceDeskController
                 dateDeadline = i.dateDeadline,
                 status = i.status,
                 problemDescription = i.problemDescription,
-                subjectEmail = i.subjectEmail
-            };
+                subjectEmail = i.subjectEmail,
+                // For now, subject ID is just 3
+                subjectID = 3
+        };
             dao.InsertTicket(inc);
         }
 

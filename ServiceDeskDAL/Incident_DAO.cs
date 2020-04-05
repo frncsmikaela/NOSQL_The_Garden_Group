@@ -75,19 +75,7 @@ namespace ServiceDeskDAL
 
         public void InsertTicket(Incident i)
         {
-            var doc = new BsonDocument
-            {
-                {"subjectEmail", i.subjectEmail},
-                {"_id", i._id},{"subjectID", 3},
-                {"problemDescription", i.problemDescription},
-                {"employeeID",i.employeeID},
-                {"status", i.status},
-                {"dateDeadline", i.dateDeadline}
-            };
-
-            var myObj = BsonSerializer.Deserialize<Incident>(doc);
-
-            collection.InsertOne(myObj);
+            collection.InsertOne(i);
         }
 
         public void DeleteTicket(ObjectId id)
