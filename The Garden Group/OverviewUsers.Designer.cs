@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.searchbtn = new System.Windows.Forms.Button();
-            this.searchbx = new System.Windows.Forms.TextBox();
+            this.searchbox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -38,6 +38,7 @@
             this.flowLayoutPanelShowUsers = new System.Windows.Forms.FlowLayoutPanel();
             this.btnCreateUser = new System.Windows.Forms.Button();
             this.dashboardbtn = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // searchbtn
@@ -48,17 +49,18 @@
             this.searchbtn.TabIndex = 16;
             this.searchbtn.Text = "Search";
             this.searchbtn.UseVisualStyleBackColor = true;
+            this.searchbtn.Click += new System.EventHandler(this.searchbtn_Click);
             // 
-            // searchbx
+            // searchbox
             // 
-            this.searchbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchbx.ForeColor = System.Drawing.Color.Gray;
-            this.searchbx.Location = new System.Drawing.Point(299, 31);
-            this.searchbx.Name = "searchbx";
-            this.searchbx.Size = new System.Drawing.Size(170, 21);
-            this.searchbx.TabIndex = 15;
-            this.searchbx.Text = "Email";
-            this.searchbx.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.searchbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchbox.ForeColor = System.Drawing.Color.Gray;
+            this.searchbox.Location = new System.Drawing.Point(299, 31);
+            this.searchbox.Name = "searchbox";
+            this.searchbox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.searchbox.Size = new System.Drawing.Size(170, 21);
+            this.searchbox.TabIndex = 15;
+            this.searchbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label5
             // 
@@ -148,15 +150,25 @@
             this.dashboardbtn.UseVisualStyleBackColor = true;
             this.dashboardbtn.Click += new System.EventHandler(this.dashboardbtn_Click);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(255, 36);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(35, 13);
+            this.label6.TabIndex = 19;
+            this.label6.Text = "Email:";
+            // 
             // OverviewUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(842, 649);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.dashboardbtn);
             this.Controls.Add(this.btnCreateUser);
             this.Controls.Add(this.searchbtn);
-            this.Controls.Add(this.searchbx);
+            this.Controls.Add(this.searchbox);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -173,7 +185,7 @@
         #endregion
 
         private System.Windows.Forms.Button searchbtn;
-        private System.Windows.Forms.TextBox searchbx;
+        private System.Windows.Forms.TextBox searchbox;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -182,5 +194,6 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelShowUsers;
         private System.Windows.Forms.Button btnCreateUser;
         private System.Windows.Forms.Button dashboardbtn;
+        private System.Windows.Forms.Label label6;
     }
 }

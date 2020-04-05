@@ -68,5 +68,29 @@ namespace ServiceDeskController
                 throw e;
             }
         }
+
+        public void InsertUser(User u)
+        {
+            try
+            {
+                dao.InsertUser(u);
+            }
+            catch(Exception e)
+            {
+                throw e;
+            }
+        }
+
+        public void DeleteUser(ObjectId id)
+        {
+            try
+            {
+                dao.DeleteUser(id);
+            }
+            catch(Exception e)
+            {
+                throw e;
+            }
+        }
     }
 }

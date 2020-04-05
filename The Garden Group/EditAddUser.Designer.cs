@@ -34,16 +34,15 @@
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblPhone = new System.Windows.Forms.Label();
             this.lblLocation = new System.Windows.Forms.Label();
-            this.lblPassword = new System.Windows.Forms.Label();
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.txtLastName = new System.Windows.Forms.TextBox();
             this.comboType = new System.Windows.Forms.ComboBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.comboLocation = new System.Windows.Forms.ComboBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblFName
@@ -100,15 +99,6 @@
             this.lblLocation.TabIndex = 6;
             this.lblLocation.Text = "Location/branch:";
             // 
-            // lblPassword
-            // 
-            this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(31, 250);
-            this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(86, 13);
-            this.lblPassword.TabIndex = 7;
-            this.lblPassword.Text = "Send password?";
-            // 
             // txtFirstName
             // 
             this.txtFirstName.Location = new System.Drawing.Point(127, 82);
@@ -161,19 +151,9 @@
             this.comboLocation.Size = new System.Drawing.Size(121, 21);
             this.comboLocation.TabIndex = 13;
             // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(123, 250);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(240, 17);
-            this.checkBox1.TabIndex = 14;
-            this.checkBox1.Text = "yes, a password email will be sent to the user.";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(253, 310);
+            this.btnSave.Location = new System.Drawing.Point(210, 281);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(110, 38);
             this.btnSave.TabIndex = 15;
@@ -183,28 +163,38 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(34, 310);
+            this.btnCancel.Location = new System.Drawing.Point(34, 281);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(110, 38);
             this.btnCancel.TabIndex = 16;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label1.Location = new System.Drawing.Point(12, 32);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(173, 25);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "User Management";
             // 
             // EditAddUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(445, 450);
+            this.ClientSize = new System.Drawing.Size(361, 378);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.comboLocation);
             this.Controls.Add(this.txtPhone);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.comboType);
             this.Controls.Add(this.txtLastName);
             this.Controls.Add(this.txtFirstName);
-            this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.lblLocation);
             this.Controls.Add(this.lblPhone);
             this.Controls.Add(this.lblEmail);
@@ -212,7 +202,7 @@
             this.Controls.Add(this.lblLName);
             this.Controls.Add(this.lblFName);
             this.Name = "EditAddUser";
-            this.Text = "  ";
+            this.Text = "  Edit/Add User";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -226,15 +216,14 @@
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label lblPhone;
         private System.Windows.Forms.Label lblLocation;
-        private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.TextBox txtLastName;
         private System.Windows.Forms.ComboBox comboType;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.ComboBox comboLocation;
-        private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.Label label1;
     }
 }

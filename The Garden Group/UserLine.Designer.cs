@@ -118,6 +118,7 @@
             this.pictureBoxEdit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxEdit.TabIndex = 14;
             this.pictureBoxEdit.TabStop = false;
+            this.pictureBoxEdit.Click += new System.EventHandler(this.pictureBoxEdit_Click);
             // 
             // UserLine
             // 

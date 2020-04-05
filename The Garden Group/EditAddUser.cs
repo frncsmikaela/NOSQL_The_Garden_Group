@@ -73,8 +73,19 @@ namespace The_Garden_Group
             }
             else
             {
-
+                service.InsertUser(user);
             }
+
+            
+            OverviewUsers overview = new OverviewUsers();
+            overview.Show();
+            this.Hide();
+            
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 }

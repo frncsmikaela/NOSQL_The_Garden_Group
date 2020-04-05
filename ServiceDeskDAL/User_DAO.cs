@@ -48,5 +48,16 @@ namespace ServiceDeskDAL
                 .Set("email", u.email).Set("location", u.location);
             collection.UpdateOne(filter, newValue);
         }
+
+        public void InsertUser(User u)
+        {
+            collection.InsertOne(u);
+        }
+
+        public void DeleteUser(ObjectId id)
+        {
+            var deleteFilter = Builders<User>.Filter.Eq("_id", id);
+            collection.DeleteOne(deleteFilter);
+        }
     }
 }

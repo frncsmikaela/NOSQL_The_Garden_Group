@@ -22,7 +22,7 @@ namespace The_Garden_Group
 
         private User user;
 
-        public void SetItem(ServiceDeskModel.User u)
+        public void SetItem(User u)
         {
             user = u;
             lblID.Text = u._id.ToString();
@@ -39,10 +39,7 @@ namespace The_Garden_Group
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            if (onEdit != null)
-            {
-                onEdit(this);
-            }
+            
         }
 
         private void pictureBoxDelete_Click(object sender, EventArgs e)
@@ -53,5 +50,12 @@ namespace The_Garden_Group
             }
         }
 
+        private void pictureBoxEdit_Click(object sender, EventArgs e)
+        {
+            if (onEdit != null)
+            {
+                onEdit(this);
+            }
+        }
     }
 }
