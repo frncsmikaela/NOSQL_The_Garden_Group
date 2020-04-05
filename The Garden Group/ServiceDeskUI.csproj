@@ -111,6 +111,24 @@
     <Compile Include="EditAddUser.Designer.cs">
       <DependentUpon>EditAddUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="ForgotPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ForgotPassword.Designer.cs">
+      <DependentUpon>ForgotPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceDesk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ServiceDesk.Designer.cs">
+      <DependentUpon>ServiceDesk.cs</DependentUpon>
+    </Compile>
     <Compile Include="OverviewTickets.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,6 +160,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EditAddForm.resx">
       <DependentUpon>EditAddForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ForgotPassword.resx">
+      <DependentUpon>ForgotPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ServiceDesk.resx">
+      <DependentUpon>ServiceDesk.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OverviewTickets.resx">
       <DependentUpon>OverviewTickets.cs</DependentUpon>
