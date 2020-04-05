@@ -7,33 +7,34 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static ServiceDeskController.Incident_Service;
+using ServiceDeskModel;
 
 namespace The_Garden_Group
 {
-    public partial class TicketViewLine : UserControl
+    public partial class UserLine : UserControl
     {
-        public Action<TicketViewLine> onEdit { get; set; }
-        public Action<TicketViewLine> onDelete { get; set; }
-        private ViewIncident viewIncident;
-        public TicketViewLine()
+        public UserLine()
         {
             InitializeComponent();
         }
+        public Action<UserLine> onEdit { get; set; }
+        public Action<UserLine> onDelete { get; set; }
 
-        public void SetItem(ViewIncident i)
+        private User user;
+
+        public void SetItem(ServiceDeskModel.User u)
         {
-            viewIncident = i;
-            lblID.Text = i.id;
-            lblSubjectEmail.Text = i.subjectEmail;
-            lblEmployeeID.Text = i.employeeID.ToString();
-            lblDateDeadline.Text = i.dateDeadline.ToString();
-            lblStatus.Text = i.status;
+            user = u;
+            lblID.Text = u._id.ToString();
+            lblEmail.Text = u.email;
+            lblFirstName.Text = u.firstName;
+            lblLastName.Text = u.lastName;
+            lblTickets.Text = "1";
         }
 
-        public ViewIncident GetItem()
+        public User GetItem()
         {
-            return viewIncident;
+            return user;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -47,9 +48,10 @@ namespace The_Garden_Group
         private void pictureBoxDelete_Click(object sender, EventArgs e)
         {
             if (onEdit != null)
-            { 
+            {
                 onDelete(this);
             }
         }
+
     }
 }
