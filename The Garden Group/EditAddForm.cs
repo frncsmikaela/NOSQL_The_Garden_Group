@@ -95,7 +95,7 @@ namespace The_Garden_Group
 
         private void btnAddTicket_Click(object sender, EventArgs e)
         {
-            if (IsListCorrect())
+              if (IsListCorrect())
             {
                 mail = new email();
                 onAdd(GetItem());

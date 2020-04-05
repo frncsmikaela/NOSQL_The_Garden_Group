@@ -43,5 +43,30 @@ namespace ServiceDeskController
             }
 
         }
+
+        public bool Exists(int phone)
+        {
+            try
+            {
+               bool check = dao.Exists(phone);
+                return check;
+            }
+            catch(Exception e)
+            {
+                throw e;
+            }
+        }
+
+        public void UpdateUser(User u)
+        {
+            try
+            {
+                dao.UpdateUser(u);
+            }
+            catch(Exception e)
+            {
+                throw e;
+            }
+        }
     }
 }

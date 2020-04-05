@@ -129,5 +129,9 @@ namespace The_Garden_Group
             UpdateDashboardUI();
         }
 
+        private void pnlPastDeadlinesTickets_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
