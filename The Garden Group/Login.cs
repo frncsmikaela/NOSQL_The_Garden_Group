@@ -33,14 +33,15 @@ namespace The_Garden_Group
             if (true)
             {
                 ServiceDesk Desk = new ServiceDesk();
-                Desk.ShowDialog();
+                Desk.ShowDialog(); //moved inside the if statement
             }
             /*else if (txt_username_subject.Text == true)
             {
 
             }*/
 
-            
+            //Desk.ShowDialog(); does not work here
+
             this.Hide();
         }
     }
