@@ -24,20 +24,20 @@ namespace ServiceDeskDAL
             {
                 // Return all unresolved tickets past deadline
                 var unresolvedIncidents = collection.Find(i => (i.status == "Unresolved") && (i.dateDeadline < DateTime.Now));
-                return (int)unresolvedIncidents.Count();
+                return (int)unresolvedIncidents.CountDocuments();
             }
             else
             {
                 // Return all unresolved tickets before deadline
                 var unresolvedIncidents = collection.Find(i => (i.status == "Unresolved") && (i.dateDeadline >= DateTime.Now));
-                return (int)unresolvedIncidents.Count();
+                return (int)unresolvedIncidents.CountDocuments();
             }
         }
 
         public int CountAllIncidents()
         {
             var allIncidents = collection.Find(i => true);
-            return (int)allIncidents.Count();
+            return (int)allIncidents.CountDocuments();
         }
 
         // List all unresolved incidents.
