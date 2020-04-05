@@ -40,5 +40,17 @@ namespace The_Garden_Group
                 flowLayoutPanelShowUsers.Controls.Add(vl);
             }
         }
+
+        private void btnCreateUser_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dashboardbtn_Click(object sender, EventArgs e)
+        {
+            Dashboard dashboard = new Dashboard();
+            dashboard.Show();
+            this.Hide(); 
+        }
     }
 }

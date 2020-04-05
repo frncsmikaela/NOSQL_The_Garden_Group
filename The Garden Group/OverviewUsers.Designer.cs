@@ -36,6 +36,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanelShowUsers = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnCreateUser = new System.Windows.Forms.Button();
+            this.dashboardbtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // searchbtn
@@ -123,11 +125,36 @@
             this.flowLayoutPanelShowUsers.Size = new System.Drawing.Size(818, 486);
             this.flowLayoutPanelShowUsers.TabIndex = 9;
             // 
+            // btnCreateUser
+            // 
+            this.btnCreateUser.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCreateUser.Location = new System.Drawing.Point(723, 79);
+            this.btnCreateUser.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCreateUser.Name = "btnCreateUser";
+            this.btnCreateUser.Size = new System.Drawing.Size(108, 38);
+            this.btnCreateUser.TabIndex = 17;
+            this.btnCreateUser.Text = "Create User";
+            this.btnCreateUser.UseVisualStyleBackColor = true;
+            this.btnCreateUser.Click += new System.EventHandler(this.btnCreateUser_Click);
+            // 
+            // dashboardbtn
+            // 
+            this.dashboardbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dashboardbtn.Location = new System.Drawing.Point(729, 12);
+            this.dashboardbtn.Name = "dashboardbtn";
+            this.dashboardbtn.Size = new System.Drawing.Size(101, 24);
+            this.dashboardbtn.TabIndex = 18;
+            this.dashboardbtn.Text = "Dashboard";
+            this.dashboardbtn.UseVisualStyleBackColor = true;
+            this.dashboardbtn.Click += new System.EventHandler(this.dashboardbtn_Click);
+            // 
             // OverviewUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(842, 649);
+            this.Controls.Add(this.dashboardbtn);
+            this.Controls.Add(this.btnCreateUser);
             this.Controls.Add(this.searchbtn);
             this.Controls.Add(this.searchbx);
             this.Controls.Add(this.label5);
@@ -153,5 +180,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelShowUsers;
+        private System.Windows.Forms.Button btnCreateUser;
+        private System.Windows.Forms.Button dashboardbtn;
     }
 }
